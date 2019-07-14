@@ -141,8 +141,7 @@ function test_input($data) {
 <?php
 
 if(isset($_POST['validation'])){
-if(!empty ($_POST['Prenom']) AND !empty($_POST['Nom']) AND !empty($_POST['Genre']) AND !empty($_POST['Pays' ]) AND !empty($_POST['Langage' ]) AND !empty($_POST['Email' ]) AND !empty($_POST['Date de naissance']) AND !empty($_POST['Commentaire' ]))
-;
+if(!empty ($_POST['Prenom']) AND !empty($_POST['Nom']) AND !empty($_POST['Genre']) AND !empty($_POST['Pays' ]) AND !empty($_POST['Langage' ]) AND !empty($_POST['Email' ]) AND !empty($_POST['Date de naissance']) AND !empty($_POST['Commentaire' ])){
 
 $Prenon= $_POST['Prenom' ];
 $Nom= $_POST['Nom' ];
@@ -154,11 +153,12 @@ $Date_de_naissance= $_POST['Date de naissance' ];
 $Commentaire= $_POST['Commentaire' ];
 
 foreach ($Langages as $value) { 
-  $langage = '$langage $value';}
-
+  $langage = '$langage $value';
 }
-  foreach ($Pays as $Payschoisi ){ array_push($tableau, array($Prenom, $Nom, $Genre, $Pays, $Langage, $Email, $Date_de_naissance, $Commentaire));
-
+  foreach ($Pays as $Payschoisi ){ 
+      array_push($tableau, array($Prenom, $Nom, $Genre, $Payschoisi, $Langage, $Email, $Date_de_naissance, $Commentaire));
+    }
+}
 }
 ?>
 
